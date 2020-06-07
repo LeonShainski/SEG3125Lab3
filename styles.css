@@ -1,0 +1,77 @@
+#test {
+  background-image: url('img/gradientBackground.png');
+}
+
+.header {
+  padding: 60px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  background: #1f2833;
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  border-color: black;
+  border-bottom: 5px;
+  border-style: groove;
+
+
+}
+
+p {
+    font: verdana;
+
+}
+
+#footer {
+  padding: 60px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  background: #1f2833;
+  text-align: center;
+  font-style: italic;
+  font-size: 30px;
+  color: yellow;
+  border-color: black;
+  border-bottom: 5px;
+  border-style: groove;
+  position: fixed;
+  bottom: 0%;
+  width:100%;
+  background-image: url('img/groceryBackground.jpg');
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: red;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: green;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
