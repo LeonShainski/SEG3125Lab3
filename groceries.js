@@ -181,18 +181,18 @@ function fetchPrice(department) {
 			//product_prices.push(prods[i].price);
 		}
 		else if (((restrictions.includes("Vegetarian")) && (prods[i].vegetarian == true))) {
-			product_prices.push(prods[i].price);
+			product_prices.push(prods[i]);
 		}
 		else if (((restrictions.includes("GlutenFree")) && (prods[i].glutenFree == true))) {
-			product_prices.push(prods[i].price);
+			product_prices.push(prods[i]);
 		}
     else if (((restrictions.includes("Organic")) && (prods[i].organic == true))) {
-      product_prices.push(prods[i].price);
+      product_prices.push(prods[i]);
     }
 		else if (restrictions.includes("None")){
-			product_names.push(prods[i].price);
+			product_names.push(prods[i]);
 		}
-    product_prices.push(prods[i].price);
+    product_prices.push(prods[i]);
 	}
   console.log(product_prices);
 	return product_prices;
