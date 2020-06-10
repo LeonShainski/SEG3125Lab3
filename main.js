@@ -36,7 +36,7 @@ function openInfo(evt, tabName) {
 function foodTypeSelection(option) {
 
  department=option;
- alert(department);
+ //alert(department);
 	populateListProductChoices("preferenceSelectionCheckbox", 'displayProduct');
 	document.getElementById('deptSelectBtn').innerHTML = department;
 
