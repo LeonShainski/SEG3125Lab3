@@ -77,7 +77,7 @@ var products = [
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
+/*function restrictListProducts(prods, restriction) {
 	let product_names = [];
   let product_prices = [];
   //console.log(prods[i].price)
@@ -98,9 +98,87 @@ function restrictListProducts(prods, restriction) {
 	}
   console.log(product_prices);
 	return product_names;
+}*/
+
+function restrictListProducts() {
+	let prods=products;
+	let restrictions = [];
+	let product_names = [];
+	let product_prices = [];
+	var checks = document.getElementsByClassName('checks');
+	//Going through the restrictions checkbox to see what is selected.
+	for (i=0; i<checks.length;i++) {
+		console.log(checks[i].checked);
+		if (checks[i].checked) {
+			//Populating the array of restrictions
+			restrictions.push(checks[i].value);
+		}
+	}
+
+  //console.log(prods[i].price)
+	for (let i=0; i<prods.length; i+=1) {
+		if (restrictions.length==0) {
+			product_names.push(prods[i].name);
+		}
+		else if (((restrictions.includes("Vegetarian")) && (prods[i].vegetarian == true))) {
+			product_names.push(prods[i].name);
+		}
+		else if (((restrictions.includes("GlutenFree")) && (prods[i].glutenFree == true))) {
+			product_names.push(prods[i].name);
+		}
+    else if (((restrictions.includes("Organic")) && (prods[i].organic == true))) {
+      product_names.push(prods[i].name);
+    }
+		/*else if (restriction.includes("None")){
+			product_names.push(prods[i].name);
+		}*/
+    product_prices.push(prods[i].price);
+	}
+  console.log(product_prices);
+	return product_names;
 }
 
-function fetchPrice(prods, restriction) {
+function fetchPrice() {
+	let prods=products;
+	let restrictions = [];
+	let product_names = [];
+	let product_prices = [];
+	var checks = document.getElementsByClassName('checks');
+	//Going through the restrictions checkbox to see what is selected.
+	for (i=0; i<checks.length;i++) {
+		console.log(checks[i].checked);
+		if (checks[i].checked) {
+			//Populating the array of restrictions
+			restrictions.push(checks[i].value);
+		}
+	}
+
+  //console.log(prods[i].price)
+	for (let i=0; i<products.length; i+=1) {
+		if (restrictions.length==0) {
+			product_prices.push(prods[i].price);
+		}
+		else if (((restrictions.includes("Vegetarian")) && (prods[i].vegetarian == true))) {
+			product_prices.push(prods[i].price);
+		}
+		else if (((restrictions.includes("GlutenFree")) && (prods[i].glutenFree == true))) {
+			product_prices.push(prods[i].price);
+		}
+    else if (((restrictions.includes("Organic")) && (prods[i].organic == true))) {
+      product_prices.push(prods[i].price);
+    }
+		/*else if (restriction.includes("None")){
+			product_names.push(prods[i].name);
+		}*/
+    product_prices.push(prods[i].price);
+	}
+  console.log(product_prices);
+	return product_prices;
+}
+
+
+
+/*function fetchPrice(prods, restriction) {
 	let product_names = [];
   let product_prices = [];
   console.log(restriction)
@@ -124,7 +202,7 @@ function fetchPrice(prods, restriction) {
 	}
   console.log(product_prices);
 	return product_prices;
-}
+}*/
 
 /*function fetchPrice(product) {
   let product_prices = [];

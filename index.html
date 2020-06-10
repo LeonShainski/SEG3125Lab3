@@ -4,11 +4,12 @@
 	<link href="styles.css" rel="stylesheet" type="text/css">
   <script src="groceries.js"></script>
   <script src="main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <title>Online Grocery Site - SEG3125 Lab 3</title>
   <link rel="shortcut icon" href="img/faviconGrocery.png"/>
 </head>
 
-<body id>
+<body onload="onLoad()">
 <!-- This is the header for the store's name -->
   <div class="header">
     <h1 id="title">L Papa's Chop Shop</h1>
@@ -16,14 +17,31 @@
 
   </div>
 
+<div>
+	<h1>Tell us a bit about yourself:</h1>
+	<h3>Client Information</h3>
+	<p>Tell us a bit about you.</p>
+	Choose a Category:
+	<form id="preferenceSelectionCheckbox" onchange="populateListProductChoices(this.id, 'displayProduct')">
+        <h3>Select your dietary restrictions:</h3>
+        <label><input type="checkbox" value="Vegetarian" name="PreferenceVegetarian" class="checks"> Vegetarian</label>
+        <label><input type="checkbox" value="GlutenFree" name="PreferenceGF" class="checks"> GlutenFree</label>
+        <label><input type="checkbox" value="Organic" name="PreferenceOrganic" class="checks"> Organic</label>
+        <hr>
+        <button type="button">Get Values</button>
+    </form>
+	<button id="bigtest">Update Preferences</button>
+</div>
+
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
-  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+	<button class="tablinks" id="productsBtn" onclick="openInfo(event, 'Products')">Products</button>
+	<button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
 </div>
 
 <!-- Tab content -->
+
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
