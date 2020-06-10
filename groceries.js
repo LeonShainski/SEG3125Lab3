@@ -66,7 +66,7 @@ var products = [
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
-    organic: false,
+    organic: true,
 		price: 10.50,
 		department: "meat",
 		imglink:"https://www.skinnytaste.com/wp-content/uploads/2018/12/Baked-Salmon-1.jpg"

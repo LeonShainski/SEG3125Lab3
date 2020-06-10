@@ -105,7 +105,7 @@ function populateListProductChoices(slct1, slct2, slct3) {
 
 		//let currentProduct = optionArray[i];
 		var productName = optionArray[i].name.toString();
-		var productPrice = priceArray[i];
+		var productPrice = optionArray[i].price;
 		var toPrint = productName+"   $"+productPrice;
 
 		let itemDiv = document.createElement('div');
