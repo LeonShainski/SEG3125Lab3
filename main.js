@@ -83,9 +83,9 @@ function populateListProductChoices(slct1, slct2, slct3) {
 
 	for (i = 0; i < optionArray.length; i++) {
 
-		var productName = optionArray[i].toString();
+		/*var productName = optionArray[i].toString();
     var productPrice = priceArray[i];
-    console.log(optionArray[1])
+    //console.log(optionArray[1])
 		var toPrint = productName+"   $"+productPrice;
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
@@ -101,7 +101,43 @@ function populateListProductChoices(slct1, slct2, slct3) {
 		s2.appendChild(label);
 
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));
+		s2.appendChild(document.createElement("br"));*/
+
+		//let currentProduct = optionArray[i];
+		var productName = optionArray[i].name.toString();
+		var productPrice = priceArray[i];
+		var toPrint = productName+"   $"+productPrice;
+
+		let itemDiv = document.createElement('div');
+		itemDiv.className = "itemDiv";
+
+		//creating the image functionality for the items
+		let image = document.createElement('img');
+		image.src = optionArray[i].imglink;
+		image.width = 100;
+		image.height = 100;
+		image.display = "block";
+		itemDiv.appendChild(image);
+
+		itemDiv.appendChild(document.createElement("br"));
+
+		// create the checkbox and add in HTML DOM
+		var checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.name = "product";
+		checkbox.value = productName;
+		itemDiv.appendChild(checkbox);
+
+		// create a label for the checkbox, and also add in HTML DOM
+		var label = document.createElement('label');
+		label.htmlFor = productName;
+
+		label.appendChild(document.createTextNode(toPrint));
+		itemDiv.appendChild(label);
+
+		// create a breakline node and add in HTML DOM
+		//s2.appendChild(document.createElement("br"));
+		s2.appendChild(itemDiv);
 	}
 }
 

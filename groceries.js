@@ -5,7 +5,8 @@ var products = [
 		glutenFree: true,
     organic: true,
 		price: 1.99,
-		department: "produce"
+		department: "produce",
+		imglink:"https://avocitrus.eu/wp-content/uploads/2017/08/brocoli-558x600.jpg"
 	},
 	{
 		name: "bread",
@@ -13,7 +14,8 @@ var products = [
 		glutenFree: false,
     organic: false,
 		price: 2.35,
-		department: "bakery"
+		department: "bakery",
+		imglink:"https://bakingamoment.com/wp-content/uploads/2020/01/IMG_7173-white-bread-2.jpg"
 	},
   {
   name: "sweet onion",
@@ -21,7 +23,8 @@ var products = [
   glutenFree: true,
   organic: false,
   price: 3.10,
-	department: "produce"
+	department: "produce",
+	imglink:"https://static1.squarespace.com/static/5494756ae4b0edcae6dddb54/5499f279e4b081ecf7754aec/5d0bea2ec5ec3d0001d06bb6/1562151987371/815kv1Ns16L._SL1500_.jpg?format=1500w"
   },
   {
   name: "naan bread",
@@ -29,7 +32,8 @@ var products = [
   glutenFree: false,
   organic: true,
   price: 3.50,
-	department: "bakery"
+	department: "bakery",
+	imglink:"https://www.budgetbytes.com/wp-content/uploads/2010/09/Homemade-Naan-stack-1.jpg"
   },
   {
   name: "christmas melon",
@@ -37,7 +41,8 @@ var products = [
   glutenFree: true,
   organic: false,
   price: 4.21,
-	department: "produce"
+	department: "produce",
+	imglink:"https://www.gardeningknowhow.com/wp-content/uploads/2018/07/christmas-melon.jpg"
   },
   {
   name: "cupcakes",
@@ -45,7 +50,8 @@ var products = [
   glutenFree: false,
   organic: false,
   price: 4.75,
-	department: "bakery"
+	department: "bakery",
+	imglink:"https://truffle-assets.imgix.net/pxqrocxwsjcc_4mlylloieeiqmyecgk0qq8_rose%CC%81-champagne-cupcakes-landscape-no-graphic.jpg"
   },
   {
   name: "asparagus",
@@ -53,7 +59,8 @@ var products = [
   glutenFree: true,
   organic: true,
   price: 8.00,
-	department: "produce"
+	department: "produce",
+	imglink:"https://www.simplyrecipes.com/wp-content/uploads/2015/04/roasted-asparagus-horiz-a-1600.jpg"
   },
 	{
 		name: "salmon",
@@ -61,7 +68,8 @@ var products = [
 		glutenFree: true,
     organic: false,
 		price: 10.50,
-		department: "meat"
+		department: "meat",
+		imglink:"https://www.skinnytaste.com/wp-content/uploads/2018/12/Baked-Salmon-1.jpg"
 	},
   {
   name: "tilapia",
@@ -69,7 +77,8 @@ var products = [
   glutenFree: true,
   organic: false,
   price: 11.00,
-	department: "meat"
+	department: "meat",
+	imglink:"https://i.cbc.ca/1.4456472.1513708759!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/tilapia-image.jpg"
   },
   {
   name: "flank steak",
@@ -77,7 +86,8 @@ var products = [
   glutenFree: true,
   organic: false,
   price: 12.00,
-	department: "meat"
+	department: "meat",
+	imglink:"https://www.simplyrecipes.com/wp-content/uploads/2015/06/grilled-marinated-flank-steak-horiz-a-1200.jpg"
   },
 
 ];
@@ -132,16 +142,16 @@ function restrictListProducts(department) {
 			//product_names.push(prods[i].name);
 		}
 		else if (((restrictions.includes("Vegetarian")) && (prods[i].vegetarian == true))) {
-			product_names.push(prods[i].name);
+			product_names.push(prods[i]);
 		}
 		else if (((restrictions.includes("GlutenFree")) && (prods[i].glutenFree == true))) {
-			product_names.push(prods[i].name);
+			product_names.push(prods[i]);
 		}
     else if (((restrictions.includes("Organic")) && (prods[i].organic == true))) {
-      product_names.push(prods[i].name);
+      product_names.push(prods[i]);
     }
 		else if (restrictions.includes("None")){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i]);
 		}
     //product_prices.push(prods[i].price);
 	}
