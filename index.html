@@ -21,14 +21,14 @@
 <div>
 	<form id="preferenceSelectionCheckbox" onchange="populateListProductChoices(this.id, 'displayProduct')">
         <h3>Select your dietary restrictions:</h3>
-        <label><input type="checkbox" value="Vegetarian" name="PreferenceVegetarian" class="checks"> Vegetarian</label>
-        <label><input type="checkbox" value="GlutenFree" name="PreferenceGF" class="checks"> GlutenFree</label>
-        <label><input type="checkbox" value="Organic" name="PreferenceOrganic" class="checks"> Organic</label>
-				<label><input type="checkbox" value="None" name="PreferenceOrganic" class="checks">None</label>
+        <label><input type="checkbox" value="Vegetarian" name="PreferenceVegetarian" class="checks">Vegetarian</label>
+        <label><input type="checkbox" value="GlutenFree" name="PreferenceGF" class="checks">GlutenFree</label>
+        <label><input type="checkbox" value="Organic" name="PreferenceOrganic" class="checks">Organic</label>
+				<label><input type="checkbox" value="None" name="PreferenceNone" id="PreferenceNone" class="checks">None</label>
         <hr>
 
 				<div class="w3-dropdown-hover" id="foodTypeSelector">
-			  <button class="w3-button">Select a food department</button>
+			  <button class="w3-button" id="deptSelectBtn" style="background-color: pink;">Produce</button>
 			  <div class="w3-dropdown-content w3-bar-block w3-border">
 			    <a id="footTypeSelection" value="produce" onclick="foodTypeSelection('produce')"  class="w3-bar-item w3-button">Produce</a>
 			    <a id="footTypeSelection" onclick="foodTypeSelection('bakery')" value="bakery" class="w3-bar-item w3-button">Bakery Items</a>
@@ -50,8 +50,7 @@
 
 <div id="Products" class="tabcontent">
 
-  <h3>Your targeted products</h3>
-  <p>We preselected products based on your restrictions.</p>
+  <h3>Here is what we have for you based on your restrictions!</h3>
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">

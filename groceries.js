@@ -143,7 +143,7 @@ function restrictListProducts(department) {
 		else if (restrictions.includes("None")){
 			product_names.push(prods[i].name);
 		}
-    product_prices.push(prods[i].price);
+    //product_prices.push(prods[i].price);
 	}
   console.log(product_prices);
 	return product_names;

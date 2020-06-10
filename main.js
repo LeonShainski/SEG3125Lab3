@@ -5,7 +5,9 @@ department="produce";
 
 function onLoad() {
 	console.log(50);
+	document.getElementById('PreferenceNone').checked = true;
 	openInfo(event, 'Products');
+	populateListProductChoices("preferenceSelectionCheckbox", 'displayProduct');
 	restrictListProducts();
 	fetchPrice();
 	//document.getElementById('productsBtn').click();
@@ -35,7 +37,8 @@ function foodTypeSelection(option) {
 
  department=option;
  alert(department);
-	populateListProductChoices("preferenceSelectionCheckbox", 'displayProduct')
+	populateListProductChoices("preferenceSelectionCheckbox", 'displayProduct');
+	document.getElementById('deptSelectBtn').innerHTML = department;
 
 }
 
