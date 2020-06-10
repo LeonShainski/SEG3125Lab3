@@ -24,7 +24,7 @@ var products = [
   name: "naan bread",
   vegetarian: true,
   glutenFree: false,
-  organic: false,
+  organic: true,
   price: 3.50
   },
   {
@@ -52,7 +52,7 @@ var products = [
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
-    organic: true,
+    organic: false,
 		price: 10.50
 	},
   {

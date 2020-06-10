@@ -3,6 +3,7 @@
 
 function onLoad() {
 	console.log(50);
+	openInfo(event, 'Products');
 	//document.getElementById('productsBtn').click();
 }
 
