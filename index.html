@@ -5,6 +5,7 @@
   <script src="groceries.js"></script>
   <script src="main.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <title>Online Grocery Site - SEG3125 Lab 3</title>
   <link rel="shortcut icon" href="img/faviconGrocery.png"/>
 </head>
@@ -23,7 +24,18 @@
         <label><input type="checkbox" value="Vegetarian" name="PreferenceVegetarian" class="checks"> Vegetarian</label>
         <label><input type="checkbox" value="GlutenFree" name="PreferenceGF" class="checks"> GlutenFree</label>
         <label><input type="checkbox" value="Organic" name="PreferenceOrganic" class="checks"> Organic</label>
+				<label><input type="checkbox" value="None" name="PreferenceOrganic" class="checks">None</label>
         <hr>
+
+				<div class="w3-dropdown-hover" id="foodTypeSelector">
+			  <button class="w3-button">Select a food department</button>
+			  <div class="w3-dropdown-content w3-bar-block w3-border">
+			    <a id="footTypeSelection" value="produce" onclick="foodTypeSelection('produce')"  class="w3-bar-item w3-button">Produce</a>
+			    <a id="footTypeSelection" onclick="foodTypeSelection('bakery')" value="bakery" class="w3-bar-item w3-button">Bakery Items</a>
+			    <a id="footTypeSelection" onclick="foodTypeSelection('meat')" value="meat" class="w3-bar-item w3-button">Meat and Seafood</a>
+			  </div>
+				</div>
+
     </form>
 </div>
 
@@ -37,6 +49,7 @@
 
 
 <div id="Products" class="tabcontent">
+
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
 	 Choose items to buy:

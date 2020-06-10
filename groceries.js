@@ -4,70 +4,80 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
     organic: true,
-		price: 1.99
+		price: 1.99,
+		department: "produce"
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
     organic: false,
-		price: 2.35
+		price: 2.35,
+		department: "bakery"
 	},
   {
   name: "sweet onion",
   vegetarian: true,
   glutenFree: true,
   organic: false,
-  price: 3.10
+  price: 3.10,
+	department: "produce"
   },
   {
   name: "naan bread",
   vegetarian: true,
   glutenFree: false,
   organic: true,
-  price: 3.50
+  price: 3.50,
+	department: "bakery"
   },
   {
   name: "christmas melon",
   vegetarian: true,
   glutenFree: true,
   organic: false,
-  price: 4.21
+  price: 4.21,
+	department: "produce"
   },
   {
   name: "cupcakes",
   vegetarian: true,
   glutenFree: false,
   organic: false,
-  price: 4.75
+  price: 4.75,
+	department: "bakery"
   },
   {
   name: "asparagus",
   vegetarian: true,
   glutenFree: true,
   organic: true,
-  price: 8.00
+  price: 8.00,
+	department: "produce"
   },
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
     organic: false,
-		price: 10.50
+		price: 10.50,
+		department: "meat"
 	},
   {
   name: "tilapia",
   vegetarian: false,
   glutenFree: true,
   organic: false,
-  price: 11.00
+  price: 11.00,
+	department: "meat"
   },
   {
   name: "flank steak",
   vegetarian: false,
   glutenFree: true,
   organic: false,
-  price: 12.00
+  price: 12.00,
+	department: "meat"
   },
 
 ];
@@ -100,7 +110,7 @@ var products = [
 	return product_names;
 }*/
 
-function restrictListProducts() {
+function restrictListProducts(department) {
 	let prods=products;
 	let restrictions = [];
 	let product_names = [];
@@ -117,8 +127,9 @@ function restrictListProducts() {
 
   //console.log(prods[i].price)
 	for (let i=0; i<prods.length; i+=1) {
-		if (restrictions.length==0) {
-			product_names.push(prods[i].name);
+		if (department!=prods[i].department) {
+			//Condition used to be restrictions.length==0
+			//product_names.push(prods[i].name);
 		}
 		else if (((restrictions.includes("Vegetarian")) && (prods[i].vegetarian == true))) {
 			product_names.push(prods[i].name);
@@ -129,16 +140,16 @@ function restrictListProducts() {
     else if (((restrictions.includes("Organic")) && (prods[i].organic == true))) {
       product_names.push(prods[i].name);
     }
-		/*else if (restriction.includes("None")){
+		else if (restrictions.includes("None")){
 			product_names.push(prods[i].name);
-		}*/
+		}
     product_prices.push(prods[i].price);
 	}
   console.log(product_prices);
 	return product_names;
 }
 
-function fetchPrice() {
+function fetchPrice(department) {
 	let prods=products;
 	let restrictions = [];
 	let product_names = [];
@@ -155,8 +166,9 @@ function fetchPrice() {
 
   //console.log(prods[i].price)
 	for (let i=0; i<products.length; i+=1) {
-		if (restrictions.length==0) {
-			product_prices.push(prods[i].price);
+		if (department!=prods[i].department) {
+
+			//product_prices.push(prods[i].price);
 		}
 		else if (((restrictions.includes("Vegetarian")) && (prods[i].vegetarian == true))) {
 			product_prices.push(prods[i].price);
@@ -167,9 +179,9 @@ function fetchPrice() {
     else if (((restrictions.includes("Organic")) && (prods[i].organic == true))) {
       product_prices.push(prods[i].price);
     }
-		/*else if (restriction.includes("None")){
-			product_names.push(prods[i].name);
-		}*/
+		else if (restrictions.includes("None")){
+			product_names.push(prods[i].price);
+		}
     product_prices.push(prods[i].price);
 	}
   console.log(product_prices);

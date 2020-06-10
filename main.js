@@ -1,9 +1,13 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
+department="produce";
+
 function onLoad() {
 	console.log(50);
 	openInfo(event, 'Products');
+	restrictListProducts();
+	fetchPrice();
 	//document.getElementById('productsBtn').click();
 }
 
@@ -27,15 +31,22 @@ function openInfo(evt, tabName) {
 
 }
 
+function foodTypeSelection(option) {
 
+ department=option;
+ alert(department);
+	populateListProductChoices("preferenceSelectionCheckbox", 'displayProduct')
+
+}
 
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
 function populateListProductChoices(slct1, slct2, slct3) {
 		//console.log("21");
-		console.log(slct1);
-		console.log(slct2);
+		//console.log(slct1);
+		//console.log("hey buddy");
+		//console.log(slct3);
 		var checks = document.getElementsByClassName('checks');
 		//alert(checks.length);
 		console.log("testing here dw");
@@ -57,8 +68,8 @@ function populateListProductChoices(slct1, slct2, slct3) {
 	console.log(checks[0].value);
     //let optionArray = restrictListProducts(products, s1.value);
     //var priceArray = fetchPrice(products, s1.value);
-			let optionArray = restrictListProducts();
-    	var priceArray = fetchPrice();
+			let optionArray = restrictListProducts(department);
+    	var priceArray = fetchPrice(department);
 			//let optionArray = restrictListProducts();
     console.log(priceArray);
 

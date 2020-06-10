@@ -22,6 +22,10 @@ p {
 
 }
 
+#foodTypeSelector {
+  margin-left: 48%;
+}
+
 #footer {
   padding: 60px;
   padding-top:10px;
